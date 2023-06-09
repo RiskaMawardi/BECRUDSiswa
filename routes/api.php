@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/siswa',[Siswacontroller::class,'index']);
 Route::post('/siswa/create',[Siswacontroller::class,'store']);
 Route::get('/siswa/show/{id_siswa}',[Siswacontroller::class,'show']);
-Route::post('/siswa/update/{id_siswa}',[Siswacontroller::class,'update']);
+Route::put('/siswa/update/{id_siswa}',[Siswacontroller::class,'update']);
 Route::get('/siswa/destroy/{id_siswa}', [Siswacontroller::class,'destroy']);
 
+//getdata
+Route::get('/getData/{id_siswa}',[Siswacontroller::class,'getData']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

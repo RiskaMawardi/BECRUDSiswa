@@ -151,4 +151,13 @@ class Siswacontroller extends Controller
             return formatAPI::createAPI(400, 'Failed',$error);
         }
     }
+
+    public function getData($id_siswa){
+        $data = Siswa::where('id_siswa','=',$id_siswa)->first();
+        if($data){
+            return formatAPI::createAPI(200,'Success',$data);
+        }else{
+            return formatAPI::createAPI(400,'Failed');
+        }
+    }
 }
